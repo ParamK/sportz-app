@@ -1,0 +1,49 @@
+@mixin height-width($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin breakpoint($point) {
+    @if $point ==tab-breakpoint {
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            @content;
+        }
+    } 
+    @else if $point ==desktop-breakpoint {
+        @media screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin btn($value) {
+    background-color: $white-color;
+    border: 1px solid $value;
+    color: $value;
+    @include flex(center, center);
+
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: $value;
+        border: 1px solid $value;
+        color: $white-color;
+    }
+
+    i {
+        color: $value;
+    }
+}
+
+@mixin fill-btn($value) {
+    background-color: $value;
+    border: 1px solid $value;
+    color: $white-color;
+}

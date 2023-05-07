@@ -1,0 +1,743 @@
+// LIVE SECTION STARTS
+
+.live-score-section {
+    padding: 40px 0;
+    background: linear-gradient(146.92deg, $color-light-pink -2.59%, $color-blue 100.83%);
+    position: relative;
+    @include breakpoint(tab-breakpoint) {
+        padding: 60px 0;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        padding: 80px 0;
+    }
+}
+.dots-bg-left {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    @include breakpoint(desktop-breakpoint) {
+        left: 0;
+        right: 44.58%;
+        top: 0;
+        bottom: 0;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.dots-bg-right {
+    position: absolute;
+    left: 10.58%;
+    right: 0;
+    bottom: 0;
+
+    @include breakpoint(tab-breakpoint) {
+        left: 27.58%;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        left: 40.58%;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.desktop-wrapper {
+    @include breakpoint(desktop-breakpoint) {
+        max-width: 944px;
+        margin: auto;
+    }
+}
+.match-header {
+    display: flex;
+    justify-content: center;
+    padding: 0 56px;
+}
+.match-header-icon img {
+    width: 22px;
+    color: $primary;
+}
+.match-header-text {
+    margin-left: 4px;
+}
+.match-header-text h2 {
+    font-weight: 700;
+    color: $primary;
+    font-size: 11.8072px;
+    line-height: 17px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include breakpoint(tab-breakpoint) {
+        font-size: 16px;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        font-size: 16px;
+    }
+}
+.match-time {
+    padding: 14px 0;
+}
+.match-time p {
+    font-weight: 500;
+    font-size: 11.8072px;
+    color: $primary;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include breakpoint(tab-breakpoint) {
+        font-size: 14px;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        font-size: 14px;
+    }
+}
+.match-status {
+    position: relative;
+    max-width: 500px;
+    margin: 14px auto;
+    border: 0.983936px solid rgba(247, 247, 250, 0.2);
+}
+.teams-vs-section {
+    z-index: 1000;
+    position: relative;
+}
+.status-icon {
+    position: absolute;
+    top: -22px;
+    left: 38%;
+
+    @include breakpoint(tab-breakpoint) {
+        left: 41%;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.team-logo {
+    width: 60px;
+    height: 58px;
+    padding: 15px;
+    background: $primary;
+    box-shadow: 0px 0px 1.96787px rgba(17, 23, 32, 0.75);
+    border-radius: 98px;
+
+    @include breakpoint(tab-breakpoint) {
+        width: 130px;
+        height: 128px;
+        padding: 24px;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        width: 130px;
+        height: 128px;
+        padding: 24px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.team-border-pink {
+    border: 1.97px solid $color-light-pink;
+    box-shadow: 0px 0px 2px rgba(17, 23, 32, 0.75);
+
+    @include breakpoint(tab-breakpoint) {
+        border: 3px solid $color-light-pink;
+    }
+}
+.score-summary-wrapper {
+    @include breakpoint(tab-breakpoint) {
+        padding: 0 20px;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        padding: 0 20px;
+    }
+}
+.score-summary-wrapper.wrapper-reverse .score-summary {
+    @include breakpoint(tab-breakpoint) {
+        flex-direction: row-reverse;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        flex-direction: row-reverse;
+    }
+}
+.score-summary {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 0.98px solid rgba(255, 255, 255, 0.2);
+
+    .total-score {
+        font-weight: 700;
+        font-size: 17.7108px;
+        line-height: 10px;
+        color: $primary;
+        opacity: 75%;
+
+        @include breakpoint(tab-breakpoint) {
+            font-size: 20px;
+            line-height: 14px;
+        }
+        @include breakpoint(desktop-breakpoint) {
+            font-size: 20px;
+            line-height: 14px;
+        }
+    }
+    .overs-desc {
+        margin: 0 5px;
+        font-weight: 400;
+        font-size: 9.83936px;
+        line-height: 12px;
+        color: $primary;
+        opacity: 75%;
+
+        @include breakpoint(tab-breakpoint) {
+            font-size: 12px;
+        }
+        @include breakpoint(desktop-breakpoint) {
+            font-size: 12px;
+        }
+    }
+    .opacity-show {
+        opacity: 1;
+    }
+}
+@include breakpoint(tab-breakpoint) {
+    .score-summary:first-child .total-score {
+        font-size: 28px;
+    }
+}
+@include breakpoint(desktop-breakpoint) {
+    .score-summary:first-child .total-score {
+        font-size: 28px;
+    }
+}
+
+.score-summary:last-child {
+    border-bottom: none;
+}
+
+.vs-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint(tab-breakpoint) {
+        justify-content: center;
+        padding: 15px 0;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        padding: 15px 0;
+    }
+}
+.vs-team-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint(tab-breakpoint) {
+        justify-content: unset;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        justify-content: unset;
+    }
+}
+
+.card-reverse {
+    flex-direction: row-reverse;
+}
+.vs-logo {
+    background: rgba(255, 255, 255, 0.2);
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    padding: 2px;
+    border-radius: 12px;
+
+    @include breakpoint(tab-breakpoint) {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        border-radius: 18px;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        border-radius: 18px;
+    }
+
+    p {
+        font-weight: 700;
+        font-size: 9.83936px;
+        line-height: 18px;
+        color: #f7f7fa;
+
+        @include breakpoint(tab-breakpoint) {
+            font-size: 14px;
+        }
+        @include breakpoint(desktop-breakpoint) {
+            font-size: 14px;
+        }
+    }
+}
+
+.required-runs-section {
+    max-width: 500px;
+    margin: auto;
+    padding: 15px;
+    border-top: 0.983936px solid rgba(247, 247, 250, 0.2);
+    border-bottom: 0.983936px solid rgba(247, 247, 250, 0.2);
+
+    @include breakpoint(tab-breakpoint) {
+        border-bottom: none;
+    }
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        color: #f7f7fa;
+
+        @include breakpoint(tab-breakpoint) {
+            font-size: 16px;
+        }
+        @include breakpoint(desktop-breakpoint) {
+            font-size: 16px;
+        }
+    }
+}
+.stadium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+
+    .stadium-info {
+        margin-left: 10px;
+        font-weight: 400;
+        font-size: 11.8072px;
+        line-height: 16px;
+        color: #f7f7fa;
+
+        @include breakpoint(tab-breakpoint) {
+            font-size: 14px;
+        }
+        @include breakpoint(desktop-breakpoint) {
+            font-size: 14px;
+        }
+    }
+}
+.players-status {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include breakpoint(tab-breakpoint) {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.players-status-card {
+    @include breakpoint(tab-breakpoint) {
+        min-width: 408px;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        min-width: 462px;
+    }
+}
+.player-live-score {
+    display: flex;
+    justify-content: space-between;
+    background: $primary;
+    border: 0.5px solid #1f1f1f;
+    border-radius: 4.91968px;
+    @include breakpoint(tab-breakpoint) {
+        justify-content: space-around;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        justify-content: space-evenly;
+    }
+}
+.player-role {
+    padding: 10px 0;
+    span {
+        font-weight: 700;
+        font-size: 13.7751px;
+        line-height: 16px;
+        text-transform: capitalize;
+        color: $primary;
+    }
+}
+.player-info {
+    display: flex;
+    align-items: center;
+    padding: 7px 18px;
+    margin: 6px 0;
+
+    @include breakpoint(tab-breakpoint) {
+        padding: 7px 30px;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        padding: 7px 40px;
+    }
+
+    .player-name {
+        font-weight: 500;
+        font-size: 13.7751px;
+        line-height: 16px;
+        color: #1c1c28;
+        padding: 0 4px;
+    }
+    .current-score {
+        font-weight: 700;
+        font-size: 15.743px;
+        line-height: 18px;
+        color: $color-pink;
+    }
+}
+.player-info:first-child {
+    border-right: 0.98px solid rgba(31, 31, 31, 0.2);
+}
+
+//LIVE SECTION ENDS
+
+//UPDATES SECTION STARTS
+
+//UPDATE MOBILE VIEW STARTS
+.mobile-display {
+    display: block;
+
+    @include breakpoint(tab-breakpoint) {
+        display: none;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        display: none;
+    }
+}
+.display-lg {
+    display: none;
+
+    @include breakpoint(tab-breakpoint) {
+        display: block;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        display: block;
+    }
+}
+.latest-updates-section {
+    padding: 0 0 40px 0;
+}
+.updates-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0 20px 0;
+
+    @include breakpoint(tab-breakpoint) {
+        padding: 40px 0 10px 0;
+    }
+
+    @include breakpoint(desktop-breakpoint) {
+        padding: 40px 0 10px 0;
+    }
+
+    h3 {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #1c1c28;
+
+        @include breakpoint(tab-breakpoint) {
+            font-size: 20px;
+            line-height: 23px;
+        }
+        @include breakpoint(desktop-breakpoint) {
+            font-size: 20px;
+            line-height: 23px;
+        }
+    }
+    .see-more-link {
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 14px;
+        color: $color-pink;
+
+        @include breakpoint(tab-breakpoint) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+        @include breakpoint(desktop-breakpoint) {
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+}
+.main-card-wrapper {
+    background: $color-light-grey;
+    position: relative;
+}
+.highlight::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
+    border-radius: 0px 0px 5px 5px;
+}
+.card-image {
+    img {
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+.card-content {
+    padding: 15px 11px;
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 31, 31, 1);
+    }
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 15px 15px;
+
+    .category {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 24px;
+        color: #1f1f1f;
+        opacity: 0.5;
+    }
+    .share-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+.sub-cards-section {
+    padding: 13px 0;
+}
+.sub-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 17px 0;
+}
+.sub-card-wrapper {
+    padding: 15px 11px;
+    background: #f5f5f5;
+    border-radius: 5px;
+
+    .sub-card-content {
+        padding-right: 4px;
+
+        p {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 20px;
+            color: #1f1f1f;
+        }
+    }
+    .sub-card-footer {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0 0 0;
+
+        .category {
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 24px;
+            color: #1f1f1f;
+            opacity: 0.5;
+        }
+    }
+}
+.sub-card-image {
+    position: relative;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+}
+.sub-card-image::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
+    border-radius: 0px 0px 5px 5px;
+}
+.sub-card-footer {
+    .share-icon {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+//UPDATES SECTION TAB VIEW STARTS
+.cards-lg-banner {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card-lg {
+        flex: 0 0 calc(50% - 12px);
+        margin: 6px;
+        width: 50%;
+    }
+}
+.card-lg-content {
+    position: relative;
+
+    .card-lg-banner-img {
+        border-radius: 5px;
+        width: 100%;
+    }
+    .class-lg-desc {
+        font-weight: 500;
+        padding: 15px;
+        font-size: 14px;
+        line-height: 24px;
+        color: #f7f7fa;
+    }
+    .card-lg-highlight {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius: 5px;
+        background: linear-gradient(0deg, #0f1c70 -4%, rgba(45, 65, 207, 0) 100%);
+    }
+}
+.card-lg-content::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 4%;
+    right: 4%;
+    height: 4px;
+    background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
+    border-radius: 0px 0px 5px 5px;
+}
+.card-lg-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 15px 15px;
+
+    .category {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 24px;
+        color: #f7f7fa;
+        opacity: 0.5;
+    }
+    .share-icon {
+        width: 15px;
+        height: 15px;
+    }
+}
+.sub-cards-lg-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+.sub-card-lg {
+    flex: 0 0 calc(25% - 12px);
+    margin: 6px;
+    width: 25%;
+
+    img {
+        width: 100%;
+        border-radius: 5px;
+    }
+    .sub-card-lg-content {
+        position: relative;
+        padding: 15px;
+        background: #f5f5f5;
+        border-radius: 5px;
+    }
+    .sub-card-lg-desc {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        color: #1f1f1f;
+    }
+}
+.sub-card-tab {
+    @include breakpoint(tab-breakpoint) {
+        display: block;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        display: none;
+    }
+}
+
+.sub-card-desktop {
+    @include breakpoint(tab-breakpoint) {
+        display: none;
+    }
+    @include breakpoint(desktop-breakpoint) {
+        display: block;
+    }
+}
+.sub-card-lg-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+
+    .category {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 24px;
+        color: #1f1f1f;
+        opacity: 0.5;
+    }
+    .share-icon {
+        width: 12px;
+        height: 12px;
+    }
+}
+.sub-card-lg-content::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 7%;
+    right: 7%;
+    height: 4px;
+    background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
+    border-radius: 0px 0px 5px 5px;
+}
+//UPDATES SECTION TAB VIEW ENDS
+
+//UPDATES SECTION ENDS
