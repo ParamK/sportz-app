@@ -1,7 +1,7 @@
 // LIVE SECTION STARTS
 
 .live-score-section {
-    padding: 40px 0;
+    padding: 30px 0;
     background: linear-gradient(146.92deg, $color-light-pink -2.59%, $color-blue 100.83%);
     position: relative;
     @include breakpoint(tab-breakpoint) {
@@ -19,9 +19,8 @@
 
     @include breakpoint(desktop-breakpoint) {
         left: 0;
-        right: 44.58%;
+        right: 45%;
         top: 0;
-        bottom: 0;
     }
     img {
         width: 100%;
@@ -30,20 +29,19 @@
 }
 .dots-bg-right {
     position: absolute;
-    left: 10.58%;
+    left: 10%;
     right: 0;
     bottom: 0;
 
     @include breakpoint(tab-breakpoint) {
-        left: 27.58%;
+        left: 28%;
         right: 0;
         top: 0;
         bottom: 0;
     }
     @include breakpoint(desktop-breakpoint) {
-        left: 40.58%;
+        left: 41%;
         right: 0;
-        top: 0;
         bottom: 0;
     }
     img {
@@ -72,14 +70,11 @@
 .match-header-text h2 {
     font-weight: 700;
     color: $primary;
-    font-size: 11.8072px;
+    font-size: 11px;
     line-height: 17px;
     text-transform: uppercase;
     text-align: center;
 
-    @include breakpoint(tab-breakpoint) {
-        font-size: 16px;
-    }
     @include breakpoint(desktop-breakpoint) {
         font-size: 16px;
     }
@@ -89,7 +84,7 @@
 }
 .match-time p {
     font-weight: 500;
-    font-size: 11.8072px;
+    font-size: 12px;
     color: $primary;
     line-height: 17px;
     text-align: center;
@@ -108,22 +103,37 @@
     margin: 14px auto;
     border: 0.983936px solid rgba(247, 247, 250, 0.2);
 }
+.live-icon {
+    background: #008632;
+    border-radius: 20px;
+    width: 63px;
+    display: flex;
+    height: 24px;
+    padding: 6px 10px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 14px;
+        height: 14px;
+        margin-right: 6px;
+    }
+    span {
+        font-weight: 700;
+        font-size: 11.8072px;
+        line-height: 12px;
+        color: $primary;
+    }
+}
 .teams-vs-section {
     z-index: 1000;
     position: relative;
 }
 .status-icon {
     position: absolute;
-    top: -22px;
-    left: 38%;
-
-    @include breakpoint(tab-breakpoint) {
-        left: 41%;
-    }
-
-    img {
-        width: 100%;
-    }
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .team-logo {
@@ -131,7 +141,7 @@
     height: 58px;
     padding: 15px;
     background: $primary;
-    box-shadow: 0px 0px 1.96787px rgba(17, 23, 32, 0.75);
+    box-shadow: 0px 0px 2px rgba(17, 23, 32, 0.75);
     border-radius: 98px;
 
     @include breakpoint(tab-breakpoint) {
@@ -178,7 +188,7 @@
     display: flex;
     align-items: center;
     padding: 10px 0;
-    border-bottom: 0.98px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
     .total-score {
         font-weight: 700;
@@ -199,7 +209,7 @@
     .overs-desc {
         margin: 0 5px;
         font-weight: 400;
-        font-size: 9.83936px;
+        font-size: 10px;
         line-height: 12px;
         color: $primary;
         opacity: 75%;
@@ -237,11 +247,12 @@
     align-items: center;
 
     @include breakpoint(tab-breakpoint) {
-        justify-content: center;
         padding: 15px 0;
+        justify-content: center;
     }
     @include breakpoint(desktop-breakpoint) {
         padding: 15px 0;
+        justify-content: space-between;
     }
 }
 .vs-team-card {
@@ -283,7 +294,7 @@
 
     p {
         font-weight: 700;
-        font-size: 9.83936px;
+        font-size: 10px;
         line-height: 18px;
         color: #f7f7fa;
 
@@ -300,8 +311,8 @@
     max-width: 500px;
     margin: auto;
     padding: 15px;
-    border-top: 0.983936px solid rgba(247, 247, 250, 0.2);
-    border-bottom: 0.983936px solid rgba(247, 247, 250, 0.2);
+    border-top: 1px solid rgba(247, 247, 250, 0.2);
+    border-bottom: 1px solid rgba(247, 247, 250, 0.2);
 
     @include breakpoint(tab-breakpoint) {
         border-bottom: none;
@@ -330,7 +341,7 @@
     .stadium-info {
         margin-left: 10px;
         font-weight: 400;
-        font-size: 11.8072px;
+        font-size: 12px;
         line-height: 16px;
         color: #f7f7fa;
 
@@ -344,24 +355,21 @@
 }
 .players-status {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
 
     @include breakpoint(tab-breakpoint) {
         flex-direction: row;
         justify-content: space-around;
     }
-    @include breakpoint(desktop-breakpoint) {
-        flex-direction: row;
-        justify-content: space-between;
-    }
 }
 .players-status-card {
     @include breakpoint(tab-breakpoint) {
-        min-width: 408px;
+        flex-basis: 50%;
+        margin: 0 7px;
     }
     @include breakpoint(desktop-breakpoint) {
-        min-width: 462px;
+        flex-basis: 50%;
+        margin: 0 7px;
     }
 }
 .player-live-score {
@@ -369,7 +377,7 @@
     justify-content: space-between;
     background: $primary;
     border: 0.5px solid #1f1f1f;
-    border-radius: 4.91968px;
+    border-radius: 5px;
     @include breakpoint(tab-breakpoint) {
         justify-content: space-around;
     }
@@ -381,7 +389,7 @@
     padding: 10px 0;
     span {
         font-weight: 700;
-        font-size: 13.7751px;
+        font-size: 14px;
         line-height: 16px;
         text-transform: capitalize;
         color: $primary;
@@ -390,32 +398,33 @@
 .player-info {
     display: flex;
     align-items: center;
-    padding: 7px 18px;
+    justify-content: center;
+    padding: 7px 10px;
     margin: 6px 0;
-
-    @include breakpoint(tab-breakpoint) {
-        padding: 7px 30px;
-    }
-    @include breakpoint(desktop-breakpoint) {
-        padding: 7px 40px;
-    }
+    flex-basis: 50%;
 
     .player-name {
         font-weight: 500;
-        font-size: 13.7751px;
+        font-size: 14px;
         line-height: 16px;
         color: #1c1c28;
         padding: 0 4px;
     }
     .current-score {
         font-weight: 700;
-        font-size: 15.743px;
+        font-size: 15px;
         line-height: 18px;
         color: $color-pink;
+        margin-left: 5px;
     }
-}
-.player-info:first-child {
-    border-right: 0.98px solid rgba(31, 31, 31, 0.2);
+
+    &:first-child {
+        border-right: 1px solid rgba(31, 31, 31, 0.2);
+    }
+
+    @include breakpoint(desktop-breakpoint) {
+        padding: 7px 10px;
+    }
 }
 
 //LIVE SECTION ENDS
@@ -439,9 +448,6 @@
     @include breakpoint(tab-breakpoint) {
         display: block;
     }
-    @include breakpoint(desktop-breakpoint) {
-        display: block;
-    }
 }
 .latest-updates-section {
     padding: 0 0 40px 0;
@@ -454,10 +460,12 @@
 
     @include breakpoint(tab-breakpoint) {
         padding: 40px 0 10px 0;
+        margin: 0 6px;
     }
 
     @include breakpoint(desktop-breakpoint) {
         padding: 40px 0 10px 0;
+        margin: 0 6px;
     }
 
     h3 {
@@ -467,10 +475,6 @@
         color: #1c1c28;
 
         @include breakpoint(tab-breakpoint) {
-            font-size: 20px;
-            line-height: 23px;
-        }
-        @include breakpoint(desktop-breakpoint) {
             font-size: 20px;
             line-height: 23px;
         }
@@ -487,27 +491,25 @@
             font-size: 16px;
             line-height: 19px;
         }
-        @include breakpoint(desktop-breakpoint) {
-            font-size: 16px;
-            line-height: 19px;
-        }
     }
 }
 .main-card-wrapper {
     background: $color-light-grey;
     position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
+        border-radius: 0px 0px 5px 5px;
+    }
 }
-.highlight::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
-    border-radius: 0px 0px 5px 5px;
-}
+
 .card-image {
     img {
         width: 100%;
@@ -537,6 +539,7 @@
         opacity: 0.5;
     }
     .share-icon {
+        cursor: pointer;
         width: 16px;
         height: 16px;
     }
@@ -567,6 +570,7 @@
     .sub-card-footer {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin: 20px 0 0 0;
 
         .category {
@@ -580,25 +584,29 @@
 }
 .sub-card-image {
     position: relative;
+
     img {
         width: 100%;
         height: 100%;
         border-radius: 5px;
     }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        left: 10%;
+        right: 10%;
+        height: 2px;
+        background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
+        border-radius: 0px 0px 5px 5px;
+    }
 }
-.sub-card-image::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    bottom: 0;
-    left: 10%;
-    right: 10%;
-    height: 2px;
-    background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
-    border-radius: 0px 0px 5px 5px;
-}
+
 .sub-card-footer {
     .share-icon {
+        cursor: pointer;
         width: 12px;
         height: 12px;
     }
@@ -612,7 +620,6 @@
     .card-lg {
         flex: 0 0 calc(50% - 12px);
         margin: 6px;
-        width: 50%;
     }
 }
 .card-lg-content {
@@ -636,19 +643,20 @@
         border-radius: 5px;
         background: linear-gradient(0deg, #0f1c70 -4%, rgba(45, 65, 207, 0) 100%);
     }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        left: 4%;
+        right: 4%;
+        height: 4px;
+        background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
+        border-radius: 0px 0px 5px 5px;
+    }
 }
-.card-lg-content::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    bottom: 0;
-    left: 4%;
-    right: 4%;
-    height: 4px;
-    background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
-    border-radius: 0px 0px 5px 5px;
-}
-.card-lg-footer {
+
+.card-lg-content .card-lg-footer {
     display: flex;
     justify-content: space-between;
     padding: 0 15px 15px 15px;
@@ -661,6 +669,7 @@
         opacity: 0.5;
     }
     .share-icon {
+        cursor: pointer;
         width: 15px;
         height: 15px;
     }
@@ -673,7 +682,6 @@
 .sub-card-lg {
     flex: 0 0 calc(25% - 12px);
     margin: 6px;
-    width: 25%;
 
     img {
         width: 100%;
@@ -684,6 +692,18 @@
         padding: 15px;
         background: #f5f5f5;
         border-radius: 5px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            bottom: 0;
+            left: 7%;
+            right: 7%;
+            height: 4px;
+            background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
+            border-radius: 0px 0px 5px 5px;
+        }
     }
     .sub-card-lg-desc {
         font-weight: 500;
@@ -723,20 +743,10 @@
         opacity: 0.5;
     }
     .share-icon {
+        cursor: pointer;
         width: 12px;
         height: 12px;
     }
-}
-.sub-card-lg-content::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    bottom: 0;
-    left: 7%;
-    right: 7%;
-    height: 4px;
-    background: linear-gradient(90deg, #ea14ec -2.04%, #1246ce 102.14%);
-    border-radius: 0px 0px 5px 5px;
 }
 //UPDATES SECTION TAB VIEW ENDS
 
